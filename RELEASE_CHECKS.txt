@@ -1,0 +1,23 @@
+Jaspp 1.2.1 — Distribution Notes
+
+Privacy preparation
+- Personal sender domains and creator-specific identifiers were removed from the distribution.
+- Sender domains are configured by the person using the app.
+- Separate application, helper, and data identifiers isolate this build from the original local profile.
+- The source archive excludes repository history, caches, mail databases, API keys, pairing tokens, logs, test output, and build products.
+- The app was rebuilt from sanitized source, with binary symbols stripped.
+- Source and application scans found no known personal identifiers, home-directory paths, or common credential patterns.
+- Third-party m1ddc license and attribution are preserved.
+
+Validation
+- 56 built-in fan-control logic checks passed.
+- Mail profile, domain validation and normalization, saved-key reuse, token permissions, and empty-history checks passed.
+- Browser script syntax checks passed.
+- App and helper signature verification passed.
+- Disk image integrity and distribution checksums passed.
+
+Compatibility
+- Apple Silicon; macOS 14 or later.
+- Requires system Python 3, available through Xcode Command Line Tools.
+- Ad-hoc signed; not notarized by Apple.
+- External display features depend on DDC compatibility.

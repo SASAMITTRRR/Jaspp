@@ -1,21 +1,48 @@
 # Jaspp
 
-macOS 菜单栏工具，提供风扇监控与温控曲线、局域网遥控、显示器亮度、Apple Music 控制和本机写信台。
+### Your Mac, beautifully in control.
 
-## 下载
+Jaspp brings the everyday controls of your Mac into one elegant menu bar companion. Shape its cooling, tune your displays, guide your music, and reach your desktop from another device on the same network.
 
-- 安装包：在 Releases 下载 `Jaspp-1.2.1-arm64.dmg`，拖入 Applications。
-- 源码：下载本仓库的 `Jaspp-1.2.1-source.zip` 并解压，内含完整 Swift/Python/网页源码、构建脚本、测试及第三方许可证。
-- 支持 Apple Silicon，macOS 14+，需要 `/usr/bin/python3`（Xcode Command Line Tools 提供）。
+## A quieter rhythm. A clearer workspace.
 
-## 构建
+- **Cooling with intention.** Monitor fan speeds and temperatures, choose a preset, or create a temperature-based fan curve.
+- **Your desktop, within reach.** Control your Mac from a browser on a trusted local network, with a pairing token to protect access.
+- **Light, balanced.** Adjust built-in and compatible external displays, with brightness and display power controls in one place.
+- **Sound, uninterrupted.** Manage system volume and Apple Music playback without breaking your flow.
+- **Everyday essentials.** Lock your Mac, turn off its screen, or request a normal shutdown from the remote interface.
+- **A place to compose.** Write emails with attachments through a local workspace connected to your own Resend account.
 
-解压源码，进入 Jaspp-source 文件夹，运行 `bash build.sh`。生成 `build/Jaspp.app`，构建时自动执行 56 项风扇逻辑检查。运行 `PYTHONDONTWRITEBYTECODE=1 python3 tests/test_mail.py` 可检查邮件配置逻辑，不会发邮件或控制硬件。
+## Get Jaspp
 
-首次启用风扇控制需要管理员授权。邮件功能需要使用者自己的 Resend 密钥和已验证域名。局域网遥控采用口令认证，仅用于受信任网络。
+Download **[Jaspp for Apple Silicon](https://github.com/SASAMITTRRR/Jaspp/releases/latest)**, open the disk image, and drag **Jaspp.app** into **Applications**.
 
-## 发布说明
+**Requirements:** Apple Silicon, macOS 14 or later, and `/usr/bin/python3`, available with Xcode Command Line Tools. External display controls require a compatible DDC-enabled display.
 
-此版本从清理后的源码重新构建，不包含作者的邮件记录、密钥、连接口令或个人域名；使用独立数据目录。第三方许可证保留。详见 `发布检查.txt`。
+The app uses ad-hoc code signing and is not notarized by Apple. macOS may require you to allow it in **System Settings → Privacy & Security** when opening it for the first time.
 
-应用使用临时签名，未经过 Apple 公证，首次打开可能被 Gatekeeper 拦截；不同机型仍需自行验证。此发布验收没有执行真实风扇控制、发邮件或关机。
+## Designed around your setup
+
+Jaspp keeps its configuration on your Mac. This distribution ships without personal mail records, API keys, saved pairing tokens, or a preset sender domain. A separate data directory gives it a fresh start.
+
+Fan control requests administrator permission to install its helper. Local network and automation permissions depend on the features you use. Email requires your own Resend API key and a verified sender domain. Use the remote interface on a trusted network.
+
+## Build your own
+
+Download and extract **`Jaspp-1.2.1-source.zip`**, then run the following commands inside `Jaspp-source`:
+
+```sh
+bash build.sh
+```
+
+The app is created at `build/Jaspp.app`. The build runs 56 fan-control logic checks. To run the mail configuration tests:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 tests/test_mail.py
+```
+
+The source package includes the Swift app, Python service, browser interfaces, build scripts, tests, and third-party notices. The bundled m1ddc license is preserved alongside the component.
+
+---
+
+**Jaspp 1.2.1** · Apple Silicon · Made for the way you use your Mac.
