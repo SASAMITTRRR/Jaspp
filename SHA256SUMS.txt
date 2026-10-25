@@ -1,0 +1,2 @@
+c8fc8c3fdfb6aaf5d3ee25f3e79010bf9557821f1b5af8789caca88deb456d11  Jaspp-1.2.1-source.zip
+bcc171c0972438149b122510b3cfb5f47ec792aece2c1c4fdc9c6b003465fd2b  Jaspp-1.2.1-arm64.dmg
